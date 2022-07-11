@@ -3,39 +3,41 @@
 
 class Usuario {
     constructor(nombre, apellido, libros, mascotas ) {
-        this.nombre = String(nombre),
-        this.apellido = String(apellido),
-        this.libros = [],
-        this.mascotas = Number(mascotas)
+        this.nombre = nombre,
+        this.apellido = apellido,
+        this.libros = libros,
+        this.mascotas = mascotas
     }
+    getFullName() {
+        return `${this.nombre} ${this.apellido}`
+    }
+    addMascotas(mascota) {
+        this.mascotas.push(mascota);
+    }
+    countMascotas() {
+        return this.mascotas.length
+    }
+    getBookNames() {
+        
+        return  this.libros.map(libro => libro.nombre)
+    }
+
     addBook(autor, nombre) {
-        return this.libros.push(`Autor: ${autor} Nombre: ${nombre}`)
+        return this.libros.push(autor, nombre)
     }
+   
 }
 
 
-const usuario1 = new Usuario('Ariel', 'Montes', 1)
-
-function getFullName() {
-    return `Nombre y Apellido: ${usuario1.nombre} ${usuario1.apellido}`
-}
+const usuario1 = new Usuario('Ariel', 'Montes',   //nombre y apellido
+                [{nombre: 'El amor en tiempos de cólera', autor:'Gabriel García Márquez'}],  //nombre y autor del libro
+                ['perro coco', 'perro pelusa']);    //mascotas
 
 
-function countMascotas() {
-    return `Mascotas: ${usuario1.mascotas}`
-}
+usuario1.addBook(  'Angeles y demonios','Dan Brown');
+usuario1.addMascotas('gato Ubbe')
 
 
-
-function getBookNames() {
-    return `Libros: ${usuario1.libros}`
-}
-
-usuario1.addBook('Gabriel García Márquez', 'El amor en tiempos de cólera')
-
-
-
-console.log(getFullName())
-console.log(countMascotas())
-console.log(getBookNames())
-console.log(`Libros push ${usuario1.libros}`)
+console.log('Nombre completo: ', usuario1.getFullName())
+console.log('Libros: ', usuario1.getBookNames())
+console.log('Cantidad de mascotas: ', usuario1.countMascotas())

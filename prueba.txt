@@ -1,0 +1,51 @@
+[
+  {
+    "title": "Casa Rafael Calzada1",
+    "price": 1500000,
+    "category": "compra",
+    "description": "",
+    "id": 1
+  },
+  {
+    "title": "Casa Rafael Calzada",
+    "price": 1500000,
+    "category": "compra",
+    "description": "",
+    "id": 2
+  },
+  {
+    "title": "Casa Rafael Calzada",
+    "price": 1500000,
+    "category": "compra",
+    "description": "",
+    "id": 3
+  },
+  {
+    "title": "Casa Rafael Calzada",
+    "price": 1500000,
+    "category": "compra",
+    "description": "",
+    "id": 4
+  },
+  {
+    "title": "Casa Rafael Calzada",
+    "price": 1500000,
+    "category": "compra",
+    "description": "",
+    "id": 5
+  },
+  {
+    "title": "Casa Rafael Calzada",
+    "price": 1500000,
+    "category": "compra",
+    "description": "",
+    "id": 6
+  },
+  {
+    "title": "Casa Rafael Calzada",
+    "price": 1500000,
+    "category": "compra",
+    "description": "",
+    "id": 7
+  }
+]

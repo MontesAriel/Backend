@@ -13,7 +13,7 @@ class Contenedor {
                 //cuando length = 0 => false
                 // (tres puntos) pread ...[array] u {objeto} => copia el contenido
                 await fs.promises.writeFile(this.ruta, JSON.stringify([...dataArchivoParse, {...obj, id: dataArchivoParse[dataArchivoParse.length -1].id +1 }], null, 2))
-            }else{
+            } else {
                 await fs.promises.writeFile(this.ruta, JSON.stringify( [{...obj, id: 1 }], null, 2))
             }
 
@@ -86,10 +86,25 @@ class Contenedor {
     //eliminar todos los productos
 
     async deleteAll() {
-        await fs.promises.writeFile(this.ruta, JSON.stringify([], null, 2), 'utf-8')
+        try {
+            await fs.promises.writeFile(this.ruta, JSON.stringify([], null, 2), 'utf-8')
+        } catch (error) {
+            console.log(error)
+        }
+    }
+
+    //traer un producto al azar 
+
+    async randomItem(){
+        try {
+            let data = await fs.promises.readFile(this.ruta, 'utf-8')
+            let dataArchivoParse = JSON.parse(data)
+            let randomItem = dataArchivoParse[Math.floor(Math.random() * dataArchivoParse)]
+            console.log(randomItem)
+     } catch (error) {
+        console.log(error)
+     }
     }
 }
 
 module.exports = Contenedor
-
-

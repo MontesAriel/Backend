@@ -1,4 +1,3 @@
-
 //ENTREGA 1°
 
 // class Usuario {
@@ -48,16 +47,62 @@
 const Contenedor = require('./productos');
 
 
-const productos = new Contenedor('./prueba.txt')
+const productos = new Contenedor('./producto.txt')
 
-productos.save({title: 'Casa Rafael Calzada', price: 1500000, category: 'compra', description: ''});
-
-
-// productos.getById(1)
+async function asyncCall() {
+   await productos.save({property: 'Casa', location: 'Rafael Calzada', price: 1500000, category: 'compra', description: 'casa de 3 hambientes y patio'});
 
 
-// productos.getAll()
+    //await productos.getById(1)
 
-// productos.delete(5)
 
-// /productos.deleteAll()
+    //await productos.getAll()
+
+    //await productos.delete(5)
+
+    //await productos.deleteAll()
+
+}
+
+asyncCall()
+
+
+
+// ENTREGA 3°
+
+                            //peticion, respuesta
+// const server = http.createServer( (req, res) => {
+//     //accion para ver el saludo
+//     const hora = new Date().getHours()
+//     if( 6 <= hora && hora <= 12) {
+//         res.end('<h1>Buen dia</<h1>')
+//     } else if( 13 <= hora && hora <= 19) {
+//         res.end('<h1>Buenas tardes</<h1>')
+//     } else if( 20 <= hora && hora <= 5) {
+//         res.end('<h1>Buenas noches</<h1>')
+//     }
+//     res.end('Hola mundo')
+// })
+
+// const http = require('http')
+
+// const server = http.createServer ((req, res) => {
+//     res.end('Entrega N°3')
+// })
+
+// const createdServer = server.listen(8080, () => {
+//     try {
+//         console.log(server.address())
+//         console.log(`Escuchando en el puerto: ${server.address().port}`)    
+//     } catch (error) {
+//         console.log("error")
+//     } 
+// })
+
+
+
+
+
+
+
+

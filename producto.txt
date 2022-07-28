@@ -1,0 +1,82 @@
+[
+  {
+    "property": "Casa",
+    "location": "Rafael Calzada",
+    "price": 1500000,
+    "category": "compra",
+    "description": "casa de 3 hambientes y patio",
+    "id": 1
+  },
+  {
+    "property": "Casa",
+    "location": "Rafael Calzada",
+    "price": 1500000,
+    "category": "compra",
+    "description": "casa de 3 hambientes y patio",
+    "id": 2
+  },
+  {
+    "property": "Casa",
+    "location": "Rafael Calzada",
+    "price": 1500000,
+    "category": "compra",
+    "description": "casa de 3 hambientes y patio",
+    "id": 3
+  },
+  {
+    "property": "Casa",
+    "location": "Rafael Calzada",
+    "price": 1500000,
+    "category": "compra",
+    "description": "casa de 3 hambientes y patio",
+    "id": 4
+  },
+  {
+    "property": "Casa",
+    "location": "Rafael Calzada",
+    "price": 1500000,
+    "category": "compra",
+    "description": "casa de 3 hambientes y patio",
+    "id": 5
+  },
+  {
+    "property": "Casa",
+    "location": "Rafael Calzada",
+    "price": 1500000,
+    "category": "compra",
+    "description": "casa de 3 hambientes y patio",
+    "id": 6
+  },
+  {
+    "property": "Casa",
+    "location": "Rafael Calzada",
+    "price": 1500000,
+    "category": "compra",
+    "description": "casa de 3 hambientes y patio",
+    "id": 7
+  },
+  {
+    "property": "Casa",
+    "location": "Rafael Calzada",
+    "price": 1500000,
+    "category": "compra",
+    "description": "casa de 3 hambientes y patio",
+    "id": 8
+  },
+  {
+    "property": "Casa",
+    "location": "Rafael Calzada",
+    "price": 1500000,
+    "category": "compra",
+    "description": "casa de 3 hambientes y patio",
+    "id": 9
+  },
+  {
+    "property": "Casa",
+    "location": "Rafael Calzada",
+    "price": 1500000,
+    "category": "compra",
+    "description": "casa de 3 hambientes y patio",
+    "id": 10
+  }
+]

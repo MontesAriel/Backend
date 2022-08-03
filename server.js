@@ -4,22 +4,6 @@ const productos = new Contenedor('./producto.txt')
 //import express from 'express'
 
 const app = express()
-
-app.get('/productos', (req, res) => {
-     res.send('Desafio N°3 - productos disponibles: ');
-    res.send(productos.getAll()) 
-
-})
-
-
-
-app.get('/productosRandom', (req, res) => {
-    res.send('Desafio N°3 - productos al azar:')
-    // Math.random()
-    res.send(productos.randomItem()) 
-})
-
-
 const PORT = 8080;
 const server = app.listen(PORT, () => {
                                     //${server.adress().port}
@@ -27,3 +11,31 @@ const server = app.listen(PORT, () => {
 })
 
 server.on('error', (err) => console.log(err))
+
+app.use(express.json())
+app.use(express.static('public'))
+
+app.get('/productos', async (req, res) => {
+    try {
+        const contenedor =  new Contenedor('./producto.txt')
+       const productos = await contenedor.getAll()
+       console.log(productos)
+       res.json({productos}) 
+    } catch (error) {
+        console.log(error)
+    }
+
+})
+
+
+app.get('/productosRandom', async (req, res) => {
+    // Math.random()
+    try {
+        const contenedor =  new Contenedor('./producto.txt')
+       const productoRandom = await contenedor.randomItem()
+       return res.json({productoRandom}) 
+    } catch (error) {
+        console.log(error)
+    }
+})
+

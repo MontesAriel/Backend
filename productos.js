@@ -52,7 +52,7 @@ class Contenedor {
            
             let dataArchivoParse = JSON.parse(data)
             if(dataArchivoParse.length){
-                console.log(dataArchivoParse)
+               return dataArchivoParse;
             } else {
                 console.log('No hay productos')
             }
@@ -99,12 +99,13 @@ class Contenedor {
         try {
             let data = await fs.promises.readFile(this.ruta, 'utf-8')
             let dataArchivoParse = JSON.parse(data)
-            let randomItem = dataArchivoParse[Math.floor(Math.random() * dataArchivoParse)]
-            console.log(randomItem)
+            let randomItem = dataArchivoParse[Math.floor(Math.random() * dataArchivoParse.length)]
+            return randomItem
      } catch (error) {
         console.log(error)
      }
     }
+
 }
 
 module.exports = Contenedor

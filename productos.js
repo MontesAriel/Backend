@@ -17,12 +17,36 @@ class Contenedor {
                 await fs.promises.writeFile(this.ruta, JSON.stringify( [{...obj, id: 1 }], null, 2))
             }
 
-             return dataArchivoParse[dataArchivoParse.length - 1].id + 1;
+             return data.dataArchivoParse[dataArchivoParse.length - 1].id + 1;
             
         } catch (error) {
             console.log(error)    
         }
     }
+
+    async updateById(obj) {
+
+        try {
+            let data  = await fs.promises.readFile(this.ruta, 'utf8');
+            let dataArchivoParse = await JSON.parse(data)  //.length-1 => ultimo elemento
+            const objIndex = dataArchivoParse.findIndex(prod => prod.id === obj.id)
+
+            if(objIndex !== -1){
+                //cuando length = 0 => false
+                // (tres puntos) pread ...[array] u {objeto} => copia el contenido
+                dataArchivoParse[objIndex] = obj
+                await fs.promises.writeFile(this.ruta, JSON.stringify(dataArchivoParse, null, 2))
+                return {msg: 'Actualizado el producto'}
+            } else {
+                return {error: 'no existe el producto'}
+            }
+            
+        } catch (error) {
+            console.log(error)    
+        }
+    }
+
+    
 
     //Traer producto por ID
 

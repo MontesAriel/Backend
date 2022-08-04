@@ -1,6 +1,5 @@
 const express = require('express')
 const Contenedor = require('./productos');
-const productos = new Contenedor('./producto.txt')
 //import express from 'express'
 
 const app = express()
@@ -12,8 +11,41 @@ const server = app.listen(PORT, () => {
 
 server.on('error', (err) => console.log(err))
 
-app.use(express.json())
 app.use(express.static('public'))
+app.use(express.json())
+app.use(express.urlencoded({ extended: true}) )
+
+
+
+const { Router } = express
+const routerProductos = Router()
+
+routerProductos.post('/', (req, res) => {
+    const objProducto = req.body;
+    const contenedor =  new Contenedor('./producto.txt')
+    contenedor.save(objProducto)
+    res.json({
+        msg: 'producto guardado',
+        objProducto
+    })
+}) 
+
+routerProductos.get('/', (req, res) => {
+    
+}) 
+
+routerProductos.put('/:id', (req, res) => {
+    const { id } = req.params;
+    const objProducto = req.body;
+
+    const contenedor = new Contenedor('./producto.txt')
+    contenedor.updateById({id: parseInt(id), ...objProducto })
+    const respuesta = updateById({ id, title, price, thumbnail })
+    res.json({respuesta})
+})
+
+
+app.use('/api/productos', routerProductos)
 
 app.get('/productos', async (req, res) => {
     try {
